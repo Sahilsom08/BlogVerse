@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  scroll-behavior: smooth;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+  /* color: #7e22ce; */
+  /* color: #f97316; */
+/* 126 34 206 */
+}
+
+.btn {
+  @apply text-base text-center py-2 px-5  my-2 md:my-0 block font-semibold  text-white  rounded-full transition-all duration-200 hover:text-purple-700 ;
+}
+.secondaryBtn {
+  @apply bg-purple-700 text-center font-semibold   py-2 px-5 text-base   text-white  rounded-full;
+}
+.link{
+  @apply text-base font-medium text-[#acacaf] hover:text-purple-700;
+}
+/* ul li::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: black;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in;
+}
+
+ul li:hover::after {
+  transform: scaleX(1);
+} */
+.gradient {
+  /* background: -webkit-linear-gradient(to right, #141e30, #243b55);
+    background: linear-gradient(to right, #141e30, #243b55); 
+   */
+  background: -webkit-linear-gradient(to bottom, #274046, #e6dada);
+  background: linear-gradient(to top, #274046, #e6dada);
+}
+
+/* background: #E6DADA;  
+background: -webkit-linear-gradient(to bottom, #274046, #E6DADA);  
+background: linear-gradient(to bottom, #274046, #E6DADA); */
+
+/* isOpen 
+                ? "flex flex-col items-center px-1 py-9 m-2  absolute top-0 w-[150px] right-0   bg-[white] bg-opacity-30 rounded-md"
+                : " hidden  */
+
+/* md:flex flex-row ml-auto space-x-2 */
+
+
+/* bg-gradient-to-r from-yellow-300  to-orange-500 text-transparent bg-clip-text */

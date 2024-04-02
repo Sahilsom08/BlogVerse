@@ -39,42 +39,28 @@ function Header() {
   ];
 
   return (
-    <header className="py-3 block z-10 bg-[#19191c]  border-b border-gray-700">
+    <header className="py-3  block z-10 bg-[#19191c]  border-b border-gray-700">
       <Container>
         <nav className="flex">
-          <div className=" flex items-center">
+          <div className="">
             <Link to="/">
-              <Logo/>
+              <Logo />
             </Link>
           </div>
 
           <div
-            className={`${
-              isOpen ? "hidden" : "block"
-            } md:hidden block mr-4 text-3xl absolute right-0 text-white hover:text-purple-700 `}
+            className={`md:hidden z-10  mr-4 text-3xl absolute right-0 text-white hover:text-purple-700 `}
           >
             <button onClick={() => setIsOpnen((prev) => !prev)}>
-              <IoMenu />
+              {isOpen ? <IoClose /> : <IoMenu />}
             </button>
           </div>
 
           <ul
-            className={` ${
-              isOpen && window.innerWidth <= 786
-                ? "flex z-20 flex-col items-center px-1 py-8 m-2  absolute top-0 w-[150px] right-0 bg-gray-500 bg-opacity-50  rounded-lg"
-                : " hidden md:flex flex-row ml-auto space-x-2"
-            } `}
+            className={`ml-auto md:static md:bg-transparent md:p-0 md:rounded-none  md:w-auto md:items-center md:flex-row  md:flex
+          ${isOpen ? "absolute right-4 flex flex-col bg-gray-400 bg-opacity-55 p-2 rounded-lg " : "hidden"}
+          `}
           >
-            <div
-              className={`${
-                isOpen ? "block  " : "hidden"
-              }   mr-2  text-3xl absolute top-[6px] right-0 text-white hover:text-purple-700 `}
-            >
-              <button onClick={() => setIsOpnen((prev) => !prev)}>
-                <IoClose />
-              </button>
-            </div>
-
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.name}>

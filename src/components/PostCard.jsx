@@ -18,7 +18,3 @@ function PostCard({ $id, title, featureImg }) {
   );
 }
 export default PostCard;
-
-// bg-[#38383d]
-
-//bg-[#eeeef1]

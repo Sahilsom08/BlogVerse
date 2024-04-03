@@ -37,7 +37,7 @@ export default function Post() {
       
       <div className="max-w-[60rem] ">
         <Container>
-          <div className="w-full flex justify-center mb-4 relative  rounded-xl p-2 max-h-80">
+          <div className="w-full flex justify-center mb-4 relative   rounded-xl p-2 max-h-80">
             <img
               src={serviceObj.getFilePreview(post.featureImg)}
               alt={post.title}
@@ -45,20 +45,20 @@ export default function Post() {
             />
 
             {isAuthor && (
-              <div className="absolute right-6 top-6 ">
+              <div className="absolute right-0 top-3  ">
                 <Link to={`/edit-post/${post.$id}`}>
                   <Button
-                    bgColor="bg-[#ffffff]"
+                    bgColor="bg-white"
                     textColor="text-black"
-                    className="mr-3 rounded-lg hover:bg-red-100 hover:font-semibold hover:text-red-500"
+                    className="mr-3 rounded-lg  bg-opacity-50 hover:bg-red-100 hover:font-semibold hover:text-red-500"
                   >
                     Edit
                   </Button>
                 </Link>
                 <Button
-                  bgColor="bg-[#ffffff]"
+                  bgColor="bg-white"
                   textColor="text-black"
-                  className="mr-3 rounded-lg hover:bg-red-100  hover:font-semibold hover:text-red-500"
+                  className="mr-3 rounded-lg bg-opacity-50 hover:bg-red-100  hover:font-semibold hover:text-red-500"
                   onClick={deletePost}
                 >
                   Delete
@@ -67,7 +67,8 @@ export default function Post() {
             )}
           </div>
           <div className="w-full mb-6 px-3">
-            <h1 className="text-2xl font-bold text-white">{post.title}</h1>
+            <h1 className="text-3xl capitalize font-bold text-white">{post.title}</h1>
+            <p className="text-gray-600 mb-3 capitalize">Author: {post.author}</p>
             <div className="browser-css  text-white">{parse(post.content)}</div>
           </div>
         </Container>

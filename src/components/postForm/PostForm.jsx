@@ -13,6 +13,7 @@ export default function PostForm({ post }) {
         slug: post?.$id || "",
         content: post?.content || "",
         status: post?.status || "active",
+        author: post?.author || "Anonymous", 
       },
     });
 
@@ -81,17 +82,20 @@ export default function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap text-white">
-      
-      <div className="w-2/3 px-2">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+      <div className="w-full lg:w-2/3 px-2">
         <Input
-          label="Title :"
+          label={
+            <>
+              Title<span className="text-red-500">* </span>:
+            </>
+          }
           placeholder="Title"
           className="mb-4"
           {...register("title", { required: true })}
         />
         <Input
-          label="Slug :"
+          label={<>Slug<span className='text-red-500'>* </span>:</>}
           placeholder="Slug"
           className="mb-4"
           {...register("slug", { required: true })}
@@ -102,7 +106,7 @@ export default function PostForm({ post }) {
           }}
         />
         <RTE
-          label="Content :"
+          label={<>Content<span className='text-red-500'>* </span>:</>}
           name="content"
           control={control}
           defaultValue={getValues("content")}
@@ -110,11 +114,17 @@ export default function PostForm({ post }) {
       </div>
       <div className="w-1/3 px-2">
         <Input
-          label="Featured Image :"
+          label={<>Featured Image<span className='text-red-500'>* </span>:</>}
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
           {...register("image", { required: !post })}
+        />
+        <Input
+          label={<>Authore<span className='text-red-500'>* </span>:</>}
+          placeholder="Name"
+          className="mb-4"
+          {...register("author", { required: true })}
         />
         {post && (
           <div className="w-full mb-4">

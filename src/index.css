@@ -11,13 +11,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 .btn {
   @apply text-base text-center py-2 px-5  my-2 md:my-0 block font-semibold  text-white  rounded-full transition-all duration-200 hover:text-purple-700;
@@ -32,4 +25,8 @@ body {
 .gradient {
   background: -webkit-linear-gradient(to bottom, #274046, #e6dada);
   background: linear-gradient(to top, #274046, #e6dada);
+}
+.card-hover:hover {
+    background: linear-gradient(175deg, #FFF -278.56%, #6D6D6D -78.47%, #11101D 91.61%);
+    backdrop-filter: blur(5px);
 }
